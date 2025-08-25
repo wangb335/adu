@@ -29,13 +29,13 @@ calculate_dir_size() {
     local depth=${2:-5}
     local submit=${3:-false}
     local result_file="dir_size_$(date '+%Y%m%d_%H%M%S').txt"
-    
+   
     # 排除非查找目录
     local exclude_dir=$(df |awk 'NR>1 {print $6}' | grep -wv ${dir} | awk '{print "--exclude="$1""}')
-    
+   
     echo -e "${BOLD}${BLUE}$(date '+%Y-%m-%d %H:%M:%S.%N' | cut -b 1-23)${RESET} ${CYAN}正在计算目录${BOLD}${YELLOW}${dir}${RESET}${CYAN}的大小，深度为${BOLD}${YELLOW}${depth}${RESET}"
     echo -e "${BOLD}${RED}时间可能较长，请耐心等待……${RESET}"
-    
+   
     # 使用du命令计算目录大小，并根据深度进行过滤，排除非查找目录
     if [ "$submit" = true ]; then
         echo -e "${PURPLE}=== 开始计算目录大小 ===${RESET}"
@@ -43,12 +43,12 @@ calculate_dir_size() {
         echo "目录: $dir" >> "$result_file"
         echo "深度: $depth" >> "$result_file"
         echo "----------------------------------------" >> "$result_file"
-        
+       
         # 使用彩色输出并保存到文件
-        du -h --max-depth=${depth} ${exclude_dir} ${dir} 2>/dev/null | awk -v green="${GREEN}" -v reset="${RESET}" -v bold="${BOLD}" '$1~/G$/{printf "%s%s%s %s\n", bold, green, $1, $2; print $0 > "'"$result_file.tmp"'"}' 
+        du -h --max-depth=${depth} ${exclude_dir} ${dir} 2>/dev/null | awk -v green="${GREEN}" -v reset="${RESET}" -v bold="${BOLD}" '$1~/G$/{printf "%s%s%s %s\n", bold, green, $1, $2; print $0 > "'"$result_file.tmp"'"}'
         cat "$result_file.tmp" >> "$result_file"
         rm -f "$result_file.tmp"
-        
+       
         echo "----------------------------------------" >> "$result_file"
         echo "计算结束时间: $(date '+%Y-%m-%d %H:%M:%S')" >> "$result_file"
         echo -e "${BOLD}${GREEN}结果已保存到文件: ${UNDERLINE}$result_file${RESET}"
@@ -56,7 +56,7 @@ calculate_dir_size() {
         echo -e "${PURPLE}=== 目录大小计算结果 ===${RESET}"
         du -h --max-depth=${depth} ${exclude_dir} ${dir} 2>/dev/null | awk -v green="${GREEN}" -v yellow="${YELLOW}" -v reset="${RESET}" -v bold="${BOLD}" '$1~/G$/{printf "%s%s%s %s%s%s\n", bold, green, $1, yellow, $2, reset}'
     fi
-    
+   
     echo -e "${BOLD}${GREEN}$(date '+%Y-%m-%d %H:%M:%S.%N' | cut -b 1-23) 目录大小计算结束${RESET}"
     echo -e "${CYAN}======================================${RESET}"
 }
@@ -66,10 +66,10 @@ main() {
     local dir="/"
     local depth=5
     local submit=false
-    
+   
     echo -e "${BOLD}${CYAN}ADU - 高级目录使用率工具 ${PURPLE}v1.1${RESET}"
     echo -e "${YELLOW}======================================${RESET}"
-    
+   
     # 处理参数
     while [[ $# -gt 0 ]]; do
         case $1 in
@@ -94,16 +94,16 @@ main() {
                 ;;
         esac
     done
-    
+   
     # 显示默认值
     if [[ "$dir" == "/" ]]; then
         echo -e "${GREEN}目标目录: ${BOLD}$dir ${YELLOW}(默认)${RESET}"
     fi
-    
+   
     if [[ "$depth" == 5 ]]; then
         echo -e "${GREEN}搜索深度: ${BOLD}$depth ${YELLOW}(默认)${RESET}"
     fi
-    
+   
     echo -e "${YELLOW}======================================${RESET}"
     calculate_dir_size "$dir" "$depth" "$submit"
 }
