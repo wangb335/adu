@@ -104,9 +104,3 @@ flowchart TD
 |------|------|----------|
 | v1.0 | 2025-08-20 | 初始版本 |
 | v1.1 | 2025-08-25 | 添加彩色输出和函数化 |
-
-## 📚 相关资源
-
-- [Bash脚本教程](https://example.com)
-- [Linux目录结构](https://example.com)
-- [磁盘管理工具](https://example.com)
