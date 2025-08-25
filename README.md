@@ -1,8 +1,8 @@
 # 🚀 ADU - 高级目录使用率工具
 
 > ADU (Advanced Directory Usage) 是一个用于计算目录大小的 Shell 脚本工具，可以帮助您快速找出占用空间较大的目录。
-> 
-> ![命令行工具](https://img.shields.io/badge/CLI-Tool-brightgreen) ![Bash脚本](https://img.shields.io/badge/Bash-Script-blue) 
+>
+> ![命令行工具](https://img.shields.io/badge/CLI-Tool-brightgreen) ![Bash脚本](https://img.shields.io/badge/Bash-Script-blue)
 
 ## ✨ 功能特点
 
