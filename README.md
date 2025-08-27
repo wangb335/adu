@@ -16,6 +16,36 @@
 
 ---
 
+## 📥 下载与安装
+
+### 从 GitHub 下载
+
+```bash
+# 克隆仓库
+git clone https://github.com/wangb335/adu.git
+
+# 进入项目目录
+cd adu
+
+# 添加执行权限
+chmod +x adu.sh
+```
+
+### 直接下载脚本
+
+```bash
+# 使用 curl 下载
+curl -O https://raw.githubusercontent.com/wangb335/adu/main/adu.sh
+
+# 或使用 wget 下载
+wget https://raw.githubusercontent.com/wangb335/adu/main/adu.sh
+
+# 添加执行权限
+chmod +x adu.sh
+```
+
+---
+
 ## 📖 使用方法
 
 ```bash
@@ -87,11 +117,18 @@ graph TD
 
 ---
 
+## 💻 系统要求与兼容性
+
+- 🐧 **操作系统**：Linux、macOS、WSL (Windows Subsystem for Linux)
+- 🐚 **Shell**：Bash 4.0+ (推荐)，也兼容 sh、zsh
+- 📋 **依赖工具**：du、sort、awk (大多数 Unix/Linux 系统默认已安装)
+
 ## ⚠️ 注意事项
 
 - 🔐 **脚本需要有足够的权限访问目标目录**
 - ⏱️ **计算大型目录可能需要较长时间**
 - 📄 **结果文件将保存在当前目录下，格式为：** `dir_size_YYYYMMDD_HHMMSS.txt`
+- 🔄 **定期更新**：建议定期从 GitHub 获取最新版本，以获得性能改进和新功能
 
 ---
 
@@ -105,3 +142,5 @@ graph TD
 | 大小 | 目录大小（GB） |
 | 路径 | 目录的完整路径 |
 | 计算结束时间 | 任务完成的日期和时间 |
+
+---
