@@ -1,8 +1,6 @@
 # 🚀 ADU - 高级目录使用率工具
 
 > ADU (Advanced Directory Usage) 是一个用于计算目录大小的 Shell 脚本工具，可以帮助您快速找出占用空间较大的目录。
->
-> ![命令行工具](https://img.shields.io/badge/CLI-Tool-brightgreen) ![Bash脚本](https://img.shields.io/badge/Bash-Script-blue)
 
 ## ✨ 功能特点
 
@@ -104,3 +102,42 @@ flowchart TD
 |------|------|----------|
 | v1.0 | 2025-08-20 | 初始版本 |
 | v1.1 | 2025-08-25 | 添加彩色输出和函数化 |
+
+## 📥 下载与安装
+
+### 方法一：直接下载
+
+```bash
+# 克隆仓库
+git clone https://github.com/wangb335/adu.git
+
+# 进入项目目录
+cd adu
+
+# 添加执行权限
+chmod +x adu.sh
+```
+
+### 方法二：一键安装
+
+```bash
+# 下载并安装
+curl -sSL https://github.com/wangb335/adu/raw/main/install.sh | bash
+
+# 或者使用 wget
+wget -qO- https://github.com/wangb335/adu/raw/main/install.sh | bash
+```
+
+## 🤝 贡献指南
+
+欢迎为 ADU 项目做出贡献！以下是参与方式：
+
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 打开一个 Pull Request
+
+## 📄 许可证
+
+本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](https://github.com/wangb335/adu/blob/main/LICENSE) 文件
