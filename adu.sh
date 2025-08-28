@@ -192,7 +192,7 @@ main() {
         echo_color success "目标目录: $dir (默认)"
     fi
 
-    if [[ "$depth" == 5 ]]; then
+    if [[ "$depth" == 1 ]]; then
         echo_color success "搜索深度: $depth (默认)"
     fi
 
